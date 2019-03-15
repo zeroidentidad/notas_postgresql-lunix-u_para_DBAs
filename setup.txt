@@ -1,0 +1,21 @@
+#puede que tenga que usar "sudo" para lo siguiente
+
+#install postgresql   - en dado casi ir a: postgresql.org/download/linux/ubuntu
+
+apt-get install postgresql postgresql-client postgresql-contrib
+
+#cambiar a cuenta de userpostgres.
+
+su postgres
+
+cd #mover al directorio /home
+
+#crear base de datos de manera por defecto.
+
+createdb ejemplo1
+
+#conectarse a la BD con el cliente de la instalacion local.
+
+psql ejemplo1
+
+#una vez dentroi con psql, ver relaciones existentes.
