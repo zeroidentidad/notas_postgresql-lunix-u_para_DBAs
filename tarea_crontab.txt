@@ -5,3 +5,8 @@ crontab -e #ingresar al editor de crontab
 
 0 0 * * * usuario pg_dump -Fc nombreDB > backups/back.bk  # a media noche todos los dias con nuestro usuario, dump parcial en formato de archivo personalizado
 
+#definicion de tarea usando script basico:
+
+0 0 * * * /home/usuario/scripts/backup.sh nombreBD  #uso de script de backup .sh para respaldo contenido BD
+
+0 0 * * * /home/usuario/scripts/backup.sh  #uso de script de backup .sh para respaldo total del BDS
