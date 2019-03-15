@@ -1,0 +1,7 @@
+
+crontab -e #ingresar al editor de crontab
+
+#despues de todas las de comentarios
+
+0 0 * * * usuario pg_dump -Fc nombreDB > backups/back.bk  # a media noche todos los dias con nuestro usuario, dump parcial en formato de archivo personalizado
+
