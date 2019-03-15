@@ -1,0 +1,36 @@
+adduser NOMBRE #llenar las indicaciones
+
+#establecer un editor de texto
+
+update-alternatives --config editor
+
+visudo #copiar/duplicar la línea que comienza con "root" y luego reemplaza "root" con tu nombre de cuenta
+
+su NOMBRE #cambia uso de cuenta al nuevo usuario
+
+cd #moverse al directorio /home
+
+touch .ssh/authorized_keys #para digitalocean y similares
+
+#Apunta a tu máquina y obtén tu clave de .ssh / id_rsa.pub
+
+#si no tienes llave aqui, Google SSH keys
+#o leer: https://help.github.com/articles/generating-an-ssh-key/
+
+cat .ssh/id_rsa.pub  #Copia la clave en pantalla y apunta a tu servidor
+
+vim .ssh/authorized_keys #en cao de usar vim pegue su llave en - use "i" para entrar en el modo de inserción
+
+sudo -v #verificar acceso sudo
+
+sudo su - #cambiar a usuario root
+
+cd #moverse al directorio /home
+
+mv .ssh/authorized_keys .ssh/authorized_keys_OLD #deshabilitar acceso SSH para root
+
+#acceder a la configuración de autenticación
+
+sudo vim /etc/postgresql/10.5/main/pg_hba.conf #reemplaza 10.5 con tu versión actual.
+
+ 
