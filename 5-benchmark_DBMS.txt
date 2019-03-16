@@ -4,11 +4,11 @@
 
 create database bench  #creamos un bd que para testear
 
-pgbench -i bench  #iniciarlizar la herramienta integrada pgbench en la bd de test
+pgbench -i bench  #inicializar la herramienta integrada pgbench en la bd de test
 
 pgbench bench  #ejecutar la herramienta en la bd y observar los resultados de prueba
 
-pgbench -i -s 100 bench  #iniciarlizar la herramienta integrada pgbench en la bd de test con escala de factor de tamaño
+pgbench -i -s 100 bench  #inicializar la herramienta integrada pgbench en la bd de test con escala de factor de tamaño
 
 #iniciarlizar la herramienta integrada pgbench en la bd de test con tiempo limite de transacciones (-T),
 #de carga de trabajo numero cpus (-j), cantidad de clientes de prueba (-c), probar solo con consultas (-S)
