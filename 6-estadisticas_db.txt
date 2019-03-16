@@ -1,0 +1,16 @@
+
+psql nombrebd #conectarse a la base de datos a analizar
+
+CREATE EXTENSION pg_stat_statements; #instalar extension de estadisticas
+
+Ir al archivo "postgresql.conf":
+
+Descomentar la linea: #shared_preload_libraries = '' y modificandola con:
+
+shared_preload_libraries = 'pg_stat_statements' # y reinicar servicio para usarla
+
+Conectarse nuevamente a la BD:
+
+select * from pg_stat_statements; #ver estado de las estadisticas
+
+select pg_stat_reset(); #cuando se requiera reniciar los datos de estdistica de la bd
