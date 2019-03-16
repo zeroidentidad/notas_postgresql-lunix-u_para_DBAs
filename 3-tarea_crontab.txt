@@ -7,6 +7,6 @@ crontab -e #ingresar al editor de crontab
 
 #definicion de tarea usando script basico:
 
-0 0 * * * /home/usuario/scripts/backup.sh nombreBD  #uso de script de backup .sh para respaldo contenido BD
+0 0 * * * /home/usuario/scripts/4-script_backup.sh nombreBD  #uso de script de backup .sh para respaldo contenido BD
 
-0 0 * * * /home/usuario/scripts/backup.sh  #uso de script de backup .sh para respaldo total del BDS
+0 0 * * * /home/usuario/scripts/4-script_backup.sh  #uso de script de backup .sh para respaldo total del BDS

@@ -1,0 +1,44 @@
+------------------------------
+#Prueba inicial con PGBENCH: |
+------------------------------
+
+createdb bench;  #creamos un bd que para testear
+
+pgbench -i bench  #iniciarlizar la herramienta integrada pgbench en la bd de test
+
+pgbench bench  #ejecutar la herramienta en la bd y observar los resultados de prueba
+
+pgbench -i -s 100 bench  #iniciarlizar la herramienta integrada pgbench en la bd de test con escala de factor de tamaño
+
+#iniciarlizar la herramienta integrada pgbench en la bd de test con tiempo limite de transacciones (-T),
+#de carga de trabajo numero cpus (-j), cantidad de clientes de prueba (-c), probar solo con consultas (-S)
+pgbench -T 120 -j 2 -c 20 -S bench 
+
+
+#De acuerdo a los resultados considerar las necesidades de configuraciones o mejorar fisicas del servidor de base de datos.
+
+----------------------------------------
+#Revision de configuraciones del DBMS: |
+----------------------------------------
+
+psql nombrebd -c "show config_file"
+
+psql nombrebd -c "show max_connections" #lo recomendado es hacer un incremento gradual a la capacidad disponible
+
+psql nombrebd -c "show shared_buffers"
+
+-------------------------------------------------
+#Hacer carga de configuraciones personalizadas: |
+-------------------------------------------------
+
+Ir al archivo "postgresql.conf"  #mostrado en psql nombrebd -c "show config_file"
+
+include postgresql.local.conf  #agregar linea en la seccion de CUSTOMIZED OPTIONS
+
+Editar el archivo "postgresql.local.conf" en la misma ruta del archivo anterior "postgresql.conf"
+
+Apoyarse con "https://PGTUNE.LEOPARD.IN.UA" para generar los parametros personalizados
+
+Guardar parametros en el archivo "postgresql.local.conf" y reiniciar el servicio del DBMS
+
+Hacer otra vuelta de pruebas con PGBENCH y verificar la efectividad.
