@@ -2,7 +2,7 @@
 #Prueba inicial con PGBENCH: |
 ------------------------------
 
-createdb bench;  #creamos un bd que para testear
+create database bench  #creamos un bd que para testear
 
 pgbench -i bench  #iniciarlizar la herramienta integrada pgbench en la bd de test
 
@@ -12,7 +12,8 @@ pgbench -i -s 100 bench  #iniciarlizar la herramienta integrada pgbench en la bd
 
 #iniciarlizar la herramienta integrada pgbench en la bd de test con tiempo limite de transacciones (-T),
 #de carga de trabajo numero cpus (-j), cantidad de clientes de prueba (-c), probar solo con consultas (-S)
-pgbench -T 120 -j 2 -c 20 -S bench 
+
+pgbench -T 120 -j 2 -c 20 -S bench
 
 
 #De acuerdo a los resultados considerar las necesidades de configuraciones o mejorar fisicas del servidor de base de datos.
